@@ -23,18 +23,18 @@ public class User {
     @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false)
+
     @OneToOne(cascade = CascadeType.ALL)  // Quando um usuário for deletado a sua conta será deletado
     private Account account;
 
-    @Column(nullable = false)
+
      // Define um relacionamento obrigatório de um-para-muitos com a entidade News.
     // Todas as operações (salvar, atualizar, remover) serão aplicadas também à lista de Feature (CascadeType.ALL).
    // As fetures associadas serão carregadas imediatamente com a entidade principal (FetchType.EAGER).
     @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     private List<Feature> features;
 
-    @Column(nullable = false)
+
     @OneToOne(cascade = CascadeType.ALL)  // Quando um usuário for deletado a seu cartão  será deletado
     private Card card;
 
