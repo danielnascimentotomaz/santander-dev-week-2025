@@ -1,0 +1,29 @@
+spring:
+  # Configuracao para ter acesso ao banco de dado pelo console
+  h2:
+    console:
+      enabled: true # Esta configuracao indica que o console H2 esta habilitado e pode ser acessado.
+      path: /h2-console # especifica o caminho da URL onde console H2 estara disponivel
+
+      settings:
+        trace: false # modo rastreamento e desabilitado
+        web-allow-others: false # Essa configuracao permite conexao remota
+
+
+
+  # Fazer a conexao com banco de dado(O h2 ja faz a conexao automaticamente mais resolve coloca para muda username e password
+  datasource:
+    url: jdbc:h2:mem:sdw2025 # Este ? o URL JDBC para conex?o com o banco de dados H2. sdw2025 nome do banco
+    driver-class-name: org.h2.Driver # Este ? o nome de classe totalmente qualificado do driver JDBC para o banco de dados H2.
+    username: daniel # Este ? o nome de usu?rio usado para autenticar com o banco de dados H2
+    password: # Esta ? a senha usada para autenticar com o banco de dados H2
+
+
+  jpa:
+    show-sql: true #Isso permite que o Hibernate mostre os comandos SQL gerados no console
+    hibernate:
+      ddl-auto: create # Essa configura??o faz com que o Hibernate gere automaticamente o esquema do banco
+      #de dados com base nas suas entidades JPA e atualize-o conforme necess?rio
+    properties:
+      hibernate:
+        format_sql: true
