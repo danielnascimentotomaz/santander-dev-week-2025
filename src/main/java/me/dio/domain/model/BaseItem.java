@@ -6,7 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
 
-@MappedSuperclass
+@MappedSuperclass // Com essa anotação consigo fazer que Feature e News extenda dessa classe
 public abstract class BaseItem {
 
     @Id
