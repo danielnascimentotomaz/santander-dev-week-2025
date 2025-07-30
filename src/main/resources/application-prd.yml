@@ -7,7 +7,9 @@ spring:
   jpa:
     open-in-view: false
     hibernate:
-      ddl-auto: create
+      # ddl-auto: create → Cria as tabelas do zero a cada execução, apagando as existentes.
+      # ddl-auto: validate → Verifica se as tabelas e colunas estão corretas, mas não altera nada no banco.
+      ddl-auto: validate
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
