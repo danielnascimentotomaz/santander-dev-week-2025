@@ -14,7 +14,7 @@ spring:
   jpa:
     open-in-view: false
     hibernate:
-      ddl-auto: validate  # Em produção, só valida o schema
+      ddl-auto: update  # Em produção, só valida o schema
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
