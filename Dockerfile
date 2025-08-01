@@ -12,7 +12,7 @@ COPY --chown=gradle:gradle . .
 
 RUN gradle build -x test
 # Executa o build do projeto, mas pula os testes (-x test).
-# O resultado será um `.jar` dentro de build/libs/.
+# O resultado será um `.jar` dentro de /app/build/libs/.
 
 # Etapa 2: imagem leve apenas com o jar
 FROM eclipse-temurin:17-jdk-alpine
@@ -22,7 +22,7 @@ FROM eclipse-temurin:17-jdk-alpine
 WORKDIR /app
 # Define o diretório de trabalho como /app também nessa etapa.
 
-COPY --from=builder build/libs/santander-dev-week-2025.jar /app/app.jar
+COPY --from=builder /app/build/libs/santander-dev-week-2025.jar /app/app.jar
 # Copia o `.jar` gerado na etapa de build do primeiro estágio para o segundo estágio (imagem final).
 
 EXPOSE 8080
