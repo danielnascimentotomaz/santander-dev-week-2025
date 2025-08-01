@@ -28,13 +28,9 @@ dependencies {
 }
 
 
-tasks.jar{
-	manifest {
-		attributes["Main-class"] = "me.dio.Application"
-
-	}
+tasks.bootJar {
+	archiveFileName = "santander-dev-week-2025.jar"
 }
-
 tasks.named('test') {
 	useJUnitPlatform()
 }
